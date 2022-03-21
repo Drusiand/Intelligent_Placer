@@ -1,0 +1,9 @@
+# Redundant PyCharm data
+.idea
+
+# Obsolete\debug scripts
+sandbox.py
+
+# Data for debug
+IntelligentPlacerData
+Cropped_elements
