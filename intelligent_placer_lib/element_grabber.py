@@ -43,6 +43,7 @@ def grab_elements(image: np.ndarray, verbose: bool = False, image_index: bool = 
         for ax, image in zip(axes, detected_elements):
             ax.imshow(image)
             ax.set_axis_off()
+        plt.tight_layout()
         plt.show()
 
     return detected_elements

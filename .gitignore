@@ -1,5 +1,6 @@
-# Redundant PyCharm data
+# Redundant data
 .idea
+.ipynb_checkpoints
 
 # Obsolete\debug scripts
 sandbox.py

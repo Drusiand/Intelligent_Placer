@@ -59,7 +59,7 @@ def classify(images: List[np.ndarray], verbose: bool = False) -> Tuple[List[np.n
             polygon_index = i
 
         if verbose:
-            fig, ax = plt.subplots(1, 5, figsize=(15, 6))
+            fig, ax = plt.subplots(1, 4, figsize=(15, 6))
 
             ax[0].imshow(image)
             ax[0].set_title("Original image")
@@ -77,9 +77,7 @@ def classify(images: List[np.ndarray], verbose: bool = False) -> Tuple[List[np.n
             ax[3].imshow(label2rgb(masks[-1], image=image))
             ax[3].set_axis_off()
 
-            ax[4].set_title("Image hist")
-            ax[4].hist(cv2.cvtColor(image, cv2.COLOR_RGB2GRAY))
-
+            plt.tight_layout()
             plt.show()
 
     for j, mask in enumerate(masks):
@@ -100,6 +98,8 @@ def classify(images: List[np.ndarray], verbose: bool = False) -> Tuple[List[np.n
         axes[-1].set_title('polygon')
         axes[-1].set_axis_off()
         axes[-1].imshow(polygons[0])
+
+        plt.tight_layout()
         plt.show()
 
     return objects, polygons
