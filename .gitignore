@@ -1,0 +1,10 @@
+# Redundant data
+.idea
+.ipynb_checkpoints
+
+# Obsolete\debug scripts
+sandbox.py
+
+# Data for debug
+IntelligentPlacerData
+Cropped_elements
