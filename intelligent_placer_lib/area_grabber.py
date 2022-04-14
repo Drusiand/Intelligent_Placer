@@ -10,6 +10,7 @@ from skimage.feature import canny
 from imageio import imread
 
 
+# crop horizontal redundant lines
 def __crop_horizontal(edge_segmentation: np.ndarray) -> Tuple[float, float]:
     top_border, low_border = 0, len(edge_segmentation)
     for i, row in enumerate(edge_segmentation):
@@ -28,6 +29,7 @@ def __crop_horizontal(edge_segmentation: np.ndarray) -> Tuple[float, float]:
     return top_border, low_border
 
 
+# crop vertical redundant lines
 def __crop_vertical(edge_segmentation: np.ndarray) -> Tuple[float, float]:
     edge_segmentation_transposed = np.transpose(edge_segmentation)
 
@@ -48,6 +50,7 @@ def __crop_vertical(edge_segmentation: np.ndarray) -> Tuple[float, float]:
     return left_border, right_border
 
 
+# grab required area
 def grab_area(path: str, verbose: bool = False) -> np.ndarray:
     raw_image = imread(path)
 
